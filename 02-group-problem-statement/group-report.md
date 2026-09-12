@@ -9,9 +9,11 @@
 | 1   | Trần Ngọc Khánh | 2A202602923 | Đưa candidate fanpage, workflow, writer |
 | 2   | Phùng Đức Đăng | 2A202602956 | Đưa candidate backend/CI-CD, technical challenge |
 | 3   | Đào Duy Hiếu | 2A202602651 | Đưa candidate CV/tài liệu, research |
-| 4   | Đặng Thái Anh | 2A202602740 | Đưa candidate dữ liệu/kênh thông tin, score |
+| 4   | Đặng Thái Anh | 02740 | Đưa candidate dữ liệu/kênh thông tin, score |
 | 5   | Tạ Đăng Dương | 2A202603018 | Đưa candidate research/NLP, validation |
 | 6   | Nguyễn Hữu Thành | 2A202602807 | Đưa candidate quản lý task/họp/gia sư, facilitator |
+
+**Tên nhóm:** X zone C
 
 **Candidate problem nhóm chọn (1 câu):**
 Chuẩn hóa commit message và tối ưu quy trình merge code nhiều lập trình viên khi push lên các nhánh feature và production trong dự án phát triển phần mềm.

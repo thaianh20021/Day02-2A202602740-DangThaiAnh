@@ -5,8 +5,8 @@
 ## Thông tin cá nhân
 
 - Họ và tên: Đặng Thái Anh
-- Mã học viên: 2A202602740
-- Nhóm: Chưa bổ sung số/tên nhóm
+- Mã học viên: 02740
+- Nhóm: X zone C
 - Candidate problem nhóm chọn: Chuẩn hóa Git workflow, commit và merge code giữa các developer trước khi release production
 
 ---
