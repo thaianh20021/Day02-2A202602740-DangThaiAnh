@@ -49,9 +49,9 @@
 - Ý bỏ vì không phải pain thật:
 
 **Self-check Phase 1:**
-- [ ] Đủ 5+ dòng, mỗi dòng có actor + số đo cụ thể
-- [ ] Dùng ít nhất 3/4 lăng kính
-- [ ] Không có dòng chung chung kiểu "mất nhiều thời gian"
+- [*] Đủ 5+ dòng, mỗi dòng có actor + số đo cụ thể
+- [*] Dùng ít nhất 3/4 lăng kính
+- [*] Không có dòng chung chung kiểu "mất nhiều thời gian"
 
 ---
 
