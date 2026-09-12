@@ -71,36 +71,36 @@ Giữ bài nào: actor cụ thể, workflow vẽ được 3-7 bước, bottlenec
 
 ---
 
-#### Problem Card #1 — [Tên problem]
+#### Problem Card #1 — Làm sạch dữ liệu Huawei SmartPV và cập nhật Power BI
 
 ```text
-Problem 1 câu:
+Problem 1 câu: Hằng tuần, nhân viên kỹ thuật phải tải datasheet, xuất dữ liệu Huawei SmartPV, làm sạch và chuẩn hóa dữ liệu thủ công trước khi cập nhật Power BI nên mất thời gian và dễ sai sót.
 
-Actor:
+Actor: Nhân viên kỹ thuật vận hành điện mặt trời và người sử dụng báo cáo Power BI.
 
-Thời điểm / bối cảnh:
+Thời điểm / bối cảnh: Mỗi tuần khi chuẩn bị dữ liệu và cập nhật báo cáo vận hành cho một hoặc nhiều site.
 
 Current workflow 3-7 bước:
-1.
-2.
-3.
-4.
-5.
+1. Thu thập datasheet, chứng chỉ và các file kỹ thuật liên quan.
+2. Đăng nhập Huawei SmartPV và xuất dữ liệu vận hành.
+3. Ghép dữ liệu của các file hoặc các site vào một bảng chung.
+4. Sửa tên cột, timestamp, đơn vị, dữ liệu thiếu, dữ liệu trùng và giá trị bất thường.
+5. Nạp dữ liệu vào Power BI, refresh biểu đồ và kiểm tra lại kết quả.
 
-Bottleneck:
+Bottleneck: Bước 4 - làm sạch và chuẩn hóa dữ liệu thủ công vì mỗi nguồn có thể dùng cấu trúc, tên trường và đơn vị khác nhau.
 
-Impact:
+Impact: Tốn thời gian hằng tuần, báo cáo có thể bị chậm và lỗi mapping hoặc dữ liệu bất thường có thể làm sai biểu đồ tải.
 
-Success metric:
+Success metric: Đo baseline T1 bằng 3 lần thực hiện; giảm thời gian xử lý xuống còn tối đa 30% T1; 100% dòng không hợp lệ được đánh dấu; không có lỗi mapping nghiêm trọng sau bước review.
 
-Non-AI alternative:
+Non-AI alternative: Dùng Power Query, bảng mapping cố định, validation rule và một mẫu export thống nhất cho các site.
 
-AI hypothesis:
+AI hypothesis: Rule/ETL xử lý dữ liệu SmartPV có cấu trúc; AI OCR/Parse chỉ đọc datasheet hoặc chứng chỉ phi cấu trúc, gợi ý mapping và đánh dấu ngoại lệ để kỹ sư duyệt trước khi Power BI refresh.
 
 Quick gut:
 [ ] No AI / process fix
 [ ] Rule
-[ ] Workflow
+[x] Workflow
 [ ] Agent
 [ ] Chưa biết
 ```
@@ -108,51 +108,51 @@ Quick gut:
 **Draft workflow Card #1** (ASCII / Mermaid / ảnh đính kèm):
 
 ```text
-CURRENT STATE — ___ phút
+CURRENT STATE — T1 phút/tuần (baseline: bấm giờ 3 lần)
 
-[1 ...: __'] → [2 ...: __'] → [3 ...: __'] → [4 ...: __']  <-- bottleneck
+[1 Thu thập file: T1a] → [2 Xuất SmartPV: T1b] → [3 Ghép file: T1c] → [4 Làm sạch + kiểm tra: T1d]  <-- bottleneck cần bấm giờ từng bước
 
-FUTURE STATE — ___ phút
+FUTURE STATE — tối đa 30% T1
 
-[1 ...: __'] → [2 ...: __'] → [3 ... review: __']  <-- human boundary
+[1 Tự động thu thập/xuất] → [2 Rule ETL + AI parse tài liệu] → [3 Kỹ sư review ngoại lệ] → [4 Power BI refresh]  <-- human boundary
 
-Fallback: nếu AI sai thì ...
+Fallback: Nếu validation thất bại hoặc AI không chắc chắn, hệ thống không cập nhật Power BI; kỹ sư dùng file export gốc và bảng mapping đã được duyệt để xử lý theo cách cũ.
 ```
 
 File đính kèm (nếu vẽ riêng): `01-individual-problem-scan-workflow-card-1.png`
 
 ---
 
-#### Problem Card #2 — [Tên problem]
+#### Problem Card #2 — Tổng hợp thông tin từ email, Zalo và Facebook
 
 ```text
-Problem 1 câu:
+Problem 1 câu: Hằng ngày, nhân viên kỹ thuật phải kiểm tra nhiều kênh như email, Zalo và Facebook để tìm thông tin công việc nên dễ bỏ sót, đọc trùng hoặc phản hồi chậm.
 
-Actor:
+Actor: Nhân viên kỹ thuật, quản lý dự án và người gửi yêu cầu.
 
-Thời điểm / bối cảnh:
+Thời điểm / bối cảnh: Đầu ngày, cuối ngày và khi cần kiểm tra các yêu cầu mới liên quan đến dự án.
 
 Current workflow 3-7 bước:
-1.
-2.
-3.
-4.
-5.
+1. Mở email và kiểm tra thư mới.
+2. Mở từng nhóm hoặc cuộc trò chuyện trên Zalo.
+3. Kiểm tra các nhóm, trang hoặc tin nhắn liên quan trên Facebook.
+4. Tự nhận diện nội dung quan trọng, loại thông tin trùng và ghi lại việc cần làm.
+5. Phân loại theo dự án, ưu tiên và phản hồi hoặc theo dõi tiến độ.
 
-Bottleneck:
+Bottleneck: Bước 4 - chuyển đổi liên tục giữa các kênh và tự xác định thông tin nào quan trọng hoặc cần hành động.
 
-Impact:
+Impact: Mất thời gian mỗi ngày, thông tin bị phân tán, có nguy cơ bỏ sót yêu cầu quan trọng và làm chậm phản hồi.
 
-Success metric:
+Success metric: Đo baseline T2 trong 5 ngày làm việc; giảm thời gian kiểm tra xuống tối đa 40% T2; 100% nội dung khẩn cấp trong bộ kiểm thử được đưa vào bản tổng hợp; AI không tự gửi phản hồi.
 
-Non-AI alternative:
+Non-AI alternative: Dùng một checklist cố định, quy định một kênh nhận việc chính và chuyển tiếp thủ công các thông tin quan trọng về cùng một nơi.
 
-AI hypothesis:
+AI hypothesis: Workflow lấy nội dung từ các kênh được cấp quyền, loại trùng, phân loại theo dự án và mức độ ưu tiên rồi tạo bản tóm tắt; người dùng kiểm tra trước khi phản hồi hoặc tạo task.
 
 Quick gut:
 [ ] No AI / process fix
 [ ] Rule
-[ ] Workflow
+[x] Workflow
 [ ] Agent
 [ ] Chưa biết
 ```
@@ -160,51 +160,51 @@ Quick gut:
 **Draft workflow Card #2:**
 
 ```text
-CURRENT STATE — ___ phút
+CURRENT STATE — T2 phút/ngày (baseline: đo trong 5 ngày)
 
-[1 ...] → [2 ...] → [3 ...]  <-- bottleneck
+[1 Kiểm tra email] → [2 Kiểm tra Zalo] → [3 Kiểm tra Facebook] → [4 Lọc + ghi việc cần làm]  <-- bottleneck
 
-FUTURE STATE — ___ phút
+FUTURE STATE — tối đa 40% T2
 
-[1 ...] → [2 ...] → [3 ... review]  <-- human boundary
+[1 Thu thập nội dung được cấp quyền] → [2 Loại trùng + phân loại + tóm tắt] → [3 Người dùng review và quyết định phản hồi]  <-- human boundary
 
-Fallback: ...
+Fallback: Nếu một nền tảng không cho phép tích hợp, người dùng chuyển tiếp nội dung quan trọng vào một inbox chung; nếu AI lỗi, tiếp tục kiểm tra trực tiếp theo checklist cũ.
 ```
 
 File đính kèm: `01-individual-problem-scan-workflow-card-2.png`
 
 ---
 
-#### Problem Card #3 — [Tên problem]
+#### Problem Card #3 — Dịch tài liệu nhưng giữ nguyên cấu trúc file
 
 ```text
-Problem 1 câu:
+Problem 1 câu: Nhân viên kỹ thuật phải dịch tài liệu sang ngôn ngữ khác trên cùng file nhưng vẫn giữ nguyên bố cục, bảng biểu, hình ảnh và định dạng nên mất nhiều thời gian kiểm tra và sửa lại file.
 
-Actor:
+Actor: Nhân viên kỹ thuật, người chuẩn bị hồ sơ và người tiếp nhận tài liệu đa ngôn ngữ.
 
-Thời điểm / bối cảnh:
+Thời điểm / bối cảnh: Khi cần gửi datasheet, báo cáo hoặc tài liệu kỹ thuật cho khách hàng, đối tác hoặc đồng nghiệp sử dụng ngôn ngữ khác.
 
 Current workflow 3-7 bước:
-1.
-2.
-3.
-4.
-5.
+1. Mở file gốc và xác định các phần cần dịch.
+2. Sao chép từng đoạn văn bản sang công cụ dịch hoặc AI.
+3. Kiểm tra và sửa thuật ngữ kỹ thuật trong bản dịch.
+4. Thay nội dung đã dịch vào đúng vị trí trong file gốc.
+5. Kiểm tra lại bố cục, bảng biểu, hình ảnh, font chữ và xuất file.
 
-Bottleneck:
+Bottleneck: Bước 4 và 5 - thay thế từng đoạn rồi sửa lỗi xuống dòng, tràn ô, font chữ hoặc thay đổi bố cục.
 
-Impact:
+Impact: Tốn thời gian theo từng trang, dễ bỏ sót nội dung, dùng sai thuật ngữ hoặc làm hỏng cấu trúc tài liệu.
 
-Success metric:
+Success metric: Đo baseline T3 trên 3 file đại diện; giảm thời gian xuống tối đa 50% T3; không làm thay đổi cấu trúc file; ít nhất 95% thuật ngữ đúng theo glossary sau review; 100% đoạn AI không chắc chắn được đánh dấu.
 
-Non-AI alternative:
+Non-AI alternative: Dùng tính năng dịch có sẵn của phần mềm, glossary cố định và dịch thủ công trên một bản sao của file gốc.
 
-AI hypothesis:
+AI hypothesis: Tool đọc cấu trúc file và gửi riêng phần văn bản cho AI dịch, sau đó thay nội dung vào đúng thành phần, chạy kiểm tra cấu trúc và yêu cầu người dùng review thuật ngữ trước khi xuất.
 
 Quick gut:
 [ ] No AI / process fix
 [ ] Rule
-[ ] Workflow
+[x] Workflow
 [ ] Agent
 [ ] Chưa biết
 ```
@@ -212,15 +212,15 @@ Quick gut:
 **Draft workflow Card #3:**
 
 ```text
-CURRENT STATE — ___ phút
+CURRENT STATE — T3 phút/file (baseline: đo trên 3 file đại diện)
 
-[1 ...] → [2 ...] → [3 ...]  <-- bottleneck
+[1 Tách nội dung] → [2 Dịch từng đoạn] → [3 Chèn lại + sửa bố cục] → [4 Kiểm tra toàn bộ file]  <-- bottleneck
 
-FUTURE STATE — ___ phút
+FUTURE STATE — tối đa 50% T3
 
-[1 ...] → [2 ...] → [3 ... review]  <-- human boundary
+[1 Tool đọc cấu trúc] → [2 AI dịch theo glossary] → [3 Tool thay nội dung + kiểm tra cấu trúc] → [4 Người dùng review thuật ngữ và bố cục]  <-- human boundary
 
-Fallback: ...
+Fallback: Luôn giữ nguyên file gốc; nếu parser không hỗ trợ cấu trúc hoặc validation thất bại, chỉ xuất bản dịch dạng text và quay lại quy trình chèn thủ công trên bản sao.
 ```
 
 File đính kèm: `01-individual-problem-scan-workflow-card-3.png`
@@ -232,26 +232,26 @@ File đính kèm: `01-individual-problem-scan-workflow-card-3.png`
 **Card tôi muốn pitch nhất:**
 
 ```text
-
+Problem Card #1 — Làm sạch dữ liệu Huawei SmartPV và cập nhật Power BI.
 ```
 
 **Vì sao (2-3 câu: workflow gì, số đo gì, impact gì):**
 
 ```text
-
+Đây là workflow lặp lại hằng tuần, có đầu vào và đầu ra rõ ràng, đồng thời có thể đo bằng T1, số file/site và số lỗi phải sửa. Nếu giảm thời gian xuống tối đa 30% T1 và kiểm soát được lỗi mapping trước khi Power BI refresh, giải pháp sẽ giảm công việc thủ công và hạn chế báo cáo sai hoặc chậm.
 ```
 
 **Câu hỏi tôi muốn nhóm challenge (1-2 câu hỏi đúng chỗ yếu):**
 
 ```text
-
+Huawei SmartPV có cho phép lấy dữ liệu tự động ổn định hay vẫn phải tải file thủ công? Phần làm sạch nào thực sự cần AI và phần nào chỉ cần Power Query hoặc validation rule để giảm rủi ro?
 ```
 
 **AI phản biện Card (nếu có):**
-- Điểm yếu AI chỉ ra:
-- Tôi sửa gì:
+- Điểm yếu AI chỉ ra: Ý tưởng ban đầu gộp dữ liệu SmartPV có cấu trúc với datasheet/chứng chỉ phi cấu trúc và gọi toàn bộ giải pháp là AI Agent, trong khi phần lớn bước làm sạch có thể giải bằng rule hoặc ETL.
+- Tôi sửa gì: Tách giải pháp thành rule/ETL cho dữ liệu SmartPV và AI OCR/Parse cho tài liệu phi cấu trúc; chỉ đưa các ngoại lệ cho kỹ sư review và không cho hệ thống tự cập nhật báo cáo khi validation thất bại.
 
 ### Self-check nộp phần 01
-- [ ] Có 5+ problems + top 3 Cards đủ field
-- [ ] Mỗi Card có workflow trước/sau + bottleneck + metric + fallback
-- [ ] Đã chọn 1 card pitch + câu hỏi challenge
+- [x] Có 5+ problems + top 3 Cards đủ field
+- [x] Mỗi Card có workflow trước/sau + bottleneck + metric + fallback
+- [x] Đã chọn 1 card pitch + câu hỏi challenge
