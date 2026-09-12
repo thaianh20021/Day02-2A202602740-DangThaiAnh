@@ -4,8 +4,8 @@
 
 ## Thông tin cá nhân
 
-- Họ và tên:
-- Mã học viên:
+- Họ và tên: Đặng Thái Anh
+- Mã học viên: 2A202602740
 - Vai trò / bối cảnh (VD: sinh viên năm X, intern PM, ...): Nhân viên kỹ thuật trong lĩnh vực điện mặt trời
 - Công việc hằng tuần (3-5 gạch đầu dòng để soi problem):
   - Tải datasheet và dữ liệu vận hành từ Huawei SmartPV, làm sạch dữ liệu và cập nhật Power BI.
