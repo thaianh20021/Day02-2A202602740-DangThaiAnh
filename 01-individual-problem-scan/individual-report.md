@@ -63,9 +63,9 @@ Giữ bài nào: actor cụ thể, workflow vẽ được 3-7 bước, bottlenec
 
 | Rank | Problem (copy từ bảng scan) | Vì sao chọn (2-3 ý) | Điều còn chưa chắc |
 |---|---|---|---|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
+| 1 | Làm sạch dữ liệu Huawei SmartPV và cập nhật Power BI | Công việc lặp lại hằng tuần, tốn nhiều thời gian và dễ phát sinh lỗi khi chuẩn hóa dữ liệu. Workflow hiện tại rõ ràng và có thể đo bằng thời gian xử lý, số file/site và số lỗi phải sửa. | Khả năng lấy dữ liệu tự động từ Huawei SmartPV; định dạng đầu vào có đồng nhất không; baseline thời gian và số lỗi thực tế. |
+| 2 | Tổng hợp thông tin hằng ngày từ email, Zalo và Facebook | Công việc diễn ra hằng ngày trên ít nhất ba kênh, thông tin phân tán nên có nguy cơ bỏ sót hoặc phản hồi chậm. Có thể đo bằng thời gian kiểm tra, số thông tin bỏ sót và thời gian phản hồi. | Quyền truy cập và khả năng tích hợp của từng nền tảng; phạm vi dữ liệu được phép thu thập; cách xác định thông tin thực sự quan trọng. |
+| 3 | Dịch tài liệu sang ngôn ngữ khác nhưng giữ nguyên cấu trúc file | Đây là nhu cầu thực tế đã từng dùng tool kết hợp AI để giải quyết. Kết quả có thể kiểm tra bằng thời gian dịch, độ chính xác thuật ngữ và số lỗi bố cục sau khi xuất file. | Những định dạng file nào cần hỗ trợ; mức độ chính xác chấp nhận được; cách xử lý chữ trong hình ảnh, biểu đồ hoặc bố cục phức tạp. |
 
 ### 2.2. Problem Cards chi tiết (lặp lại cho cả 3 cards)
 
