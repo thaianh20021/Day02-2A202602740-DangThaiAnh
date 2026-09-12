@@ -27,11 +27,6 @@
 | 3 | Lặp lại / Tốn thời gian / AI có thể tốt hơn | Phải thường xuyên tìm kiếm và cập nhật tin tức về ngành điện mặt trời, công nghệ, thiết bị, thị trường và quy định từ nhiều nguồn khác nhau. | Nhân viên kỹ thuật và quản lý | Thực hiện hằng ngày hoặc hằng tuần; cần đo số nguồn phải đọc, thời gian đọc và số tin thực sự liên quan. |
 | 4 | Tốn thời gian / AI có thể tốt hơn | Phải dịch datasheet, báo cáo hoặc tài liệu kỹ thuật sang ngôn ngữ khác trên cùng file nhưng vẫn giữ nguyên bố cục, bảng biểu, hình ảnh và định dạng. | Nhân viên kỹ thuật và người tiếp nhận tài liệu | Cần đo số file hoặc số trang mỗi tháng, thời gian dịch, số lỗi thuật ngữ và số lỗi định dạng sau khi dịch. |
 | 5 | Lặp lại / Tốn thời gian / Pain từ người khác | Hằng ngày phải kiểm tra nhiều cảnh báo trên Huawei SmartPV, xác định mức độ quan trọng, tra cứu nguyên nhân và theo dõi quá trình xử lý; cảnh báo trùng có thể làm bỏ sót sự cố nghiêm trọng. | Nhân viên kỹ thuật vận hành và chủ sở hữu hệ thống | Thực hiện hằng ngày; cần đo số cảnh báo, thời gian phân loại, số cảnh báo trùng và số sự cố bị xử lý chậm. |
-| 6 | | | | |
-| 7 | | | | |
-| 8 | | | | |
-| 9 | | | | |
-| 10 | | | | |
 
 ### Giả thuyết giải pháp AI cho 5 vấn đề
 
@@ -44,9 +39,9 @@
 > Gợi ý tự soi: tuần trước mất nhiều thời gian nhất vào việc gì? Việc gì hay trì hoãn? Người khác hay hỏi lại câu gì? Workflow nào ai cũng biết là chậm?
 
 **AI đã dùng ở Phase 1 (nếu có):**
-- Prompt đã hỏi:
-- Ý dùng được:
-- Ý bỏ vì không phải pain thật:
+- Prompt đã hỏi: Từ các công việc kỹ thuật tôi đang làm, hãy gợi ý những vấn đề lặp lại, tốn thời gian hoặc dễ sai sót và phân biệt phần nào nên dùng Rule, Workflow hoặc Agent.
+- Ý dùng được: Cách viết problem theo actor, workflow, bottleneck và metric; cách tách dữ liệu SmartPV có cấu trúc khỏi datasheet phi cấu trúc; gợi ý boundary và fallback cho từng Problem Card.
+- Ý bỏ vì không phải pain thật: Các ý tưởng quá rộng, không có dữ liệu hoặc phụ thuộc quyền truy cập phức tạp; các giải pháp gọi là Agent nhưng thực tế chỉ cần rule, ETL hoặc workflow cố định.
 
 **Self-check Phase 1:**
 - [*] Đủ 5+ dòng, mỗi dòng có actor + số đo cụ thể
